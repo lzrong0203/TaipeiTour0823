@@ -41,6 +41,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B763E08E28BDAF72004D8CD4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B778815328B4AC6A006805A3 /* Points.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B763E08F28BDAF8A004D8CD4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B796CD6328B4BBF8007D4E83 /* DetailedViewController.swift */,
+				B778814328B4A976006805A3 /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B763E09028BDAF94004D8CD4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B778813F28B4A976006805A3 /* AppDelegate.swift */,
+				B778814128B4A976006805A3 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		B778813328B4A976006805A3 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +86,13 @@
 		B778813E28B4A976006805A3 /* TaipeiTour0823 */ = {
 			isa = PBXGroup;
 			children = (
-				B796CD6328B4BBF8007D4E83 /* DetailedViewController.swift */,
-				B778813F28B4A976006805A3 /* AppDelegate.swift */,
-				B778814128B4A976006805A3 /* SceneDelegate.swift */,
-				B778814328B4A976006805A3 /* ViewController.swift */,
+				B763E08E28BDAF72004D8CD4 /* Model */,
+				B763E08F28BDAF8A004D8CD4 /* Views */,
+				B763E09028BDAF94004D8CD4 /* App */,
 				B778814528B4A976006805A3 /* Main.storyboard */,
 				B778814828B4A977006805A3 /* Assets.xcassets */,
 				B778814A28B4A977006805A3 /* LaunchScreen.storyboard */,
 				B778814D28B4A977006805A3 /* Info.plist */,
-				B778815328B4AC6A006805A3 /* Points.swift */,
 			);
 			path = TaipeiTour0823;
 			sourceTree = "<group>";

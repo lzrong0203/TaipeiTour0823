@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     var pointsArray: [Points.Point] = []
     
     override func viewDidLoad() {
@@ -49,19 +49,35 @@ class ViewController: UIViewController {
                 
             }
             
-//            print(data)
+            //            print(data)
         }.resume()
         
     }
     
     @IBAction func pointAdvise(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "This is a tour app", message: "Welcome!", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.toDetialVC()
+        }))
+        
+        present(alertController, animated: true)
+        
+        //
+    }
+    
+    func toDetialVC(){
+        
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailedViewController
         
-        print(pointsArray[0].name)
-        detailVC.name = pointsArray[0].name
+        if let point = pointsArray.randomElement(){
+            detailVC.point = point
+        }
         
         navigationController?.pushViewController(detailVC, animated: true)
-        
     }
 }
 

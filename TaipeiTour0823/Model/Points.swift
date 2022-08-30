@@ -13,6 +13,8 @@ struct Points: Codable{
     var data: [Point]
     struct Point: Codable{
         var name: String
-//        var introduction: String
+        var introduction: String
+        var nlat: Double
+        var elong: Double
     }
 }

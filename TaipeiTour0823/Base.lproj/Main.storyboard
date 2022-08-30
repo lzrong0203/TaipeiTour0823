@@ -39,6 +39,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="12a-Kv-yjx"/>
+                    <connections>
+                        <segue destination="Owc-cr-hPs" kind="show" identifier="tour" id="m7e-rO-pID"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -52,20 +55,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LkB-od-6bR">
-                                <rect key="frame" x="117" y="438" width="217" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfh-dC-jW9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="iJB-US-Nx6"/>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="B3b-hI-jIl">
+                                <rect key="frame" x="0.0" y="88" width="414" height="387"/>
+                            </mapView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dw1-O7-LlP">
+                                <rect key="frame" x="0.0" y="475" width="414" height="387"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bOx-Me-Jbf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bOx-Me-Jbf" firstAttribute="bottom" secondItem="dw1-O7-LlP" secondAttribute="bottom" id="3ps-wG-eGo"/>
+                            <constraint firstItem="rfh-dC-jW9" firstAttribute="trailing" secondItem="B3b-hI-jIl" secondAttribute="trailing" id="6fv-U5-YAL"/>
+                            <constraint firstItem="B3b-hI-jIl" firstAttribute="leading" secondItem="bOx-Me-Jbf" secondAttribute="leading" id="BJS-3C-Aq6"/>
+                            <constraint firstItem="dw1-O7-LlP" firstAttribute="leading" secondItem="bOx-Me-Jbf" secondAttribute="leading" id="Hui-n4-4eB"/>
+                            <constraint firstItem="B3b-hI-jIl" firstAttribute="top" secondItem="rfh-dC-jW9" secondAttribute="bottom" id="M6u-JV-R1Q"/>
+                            <constraint firstItem="dw1-O7-LlP" firstAttribute="height" secondItem="B3b-hI-jIl" secondAttribute="height" id="P3a-p1-2Ku"/>
+                            <constraint firstItem="dw1-O7-LlP" firstAttribute="top" secondItem="B3b-hI-jIl" secondAttribute="bottom" id="Ty5-6a-czB"/>
+                            <constraint firstItem="rfh-dC-jW9" firstAttribute="top" secondItem="okj-U6-fBy" secondAttribute="topMargin" constant="-44" id="hZp-Ka-QDs"/>
+                            <constraint firstItem="dw1-O7-LlP" firstAttribute="top" secondItem="B3b-hI-jIl" secondAttribute="bottom" id="idv-nq-BJp"/>
+                            <constraint firstItem="bOx-Me-Jbf" firstAttribute="trailing" secondItem="dw1-O7-LlP" secondAttribute="trailing" id="lKn-eQ-CUe"/>
+                            <constraint firstItem="bOx-Me-Jbf" firstAttribute="trailing" secondItem="B3b-hI-jIl" secondAttribute="trailing" id="poB-Z3-uor"/>
+                            <constraint firstItem="rfh-dC-jW9" firstAttribute="leading" secondItem="B3b-hI-jIl" secondAttribute="leading" id="skC-gq-Tyt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="39w-nH-hnb"/>
                     <connections>
-                        <outlet property="pointLabel" destination="LkB-od-6bR" id="HFN-qH-E5J"/>
+                        <outlet property="introView" destination="dw1-O7-LlP" id="AnD-1u-kJY"/>
+                        <outlet property="mapView" destination="B3b-hI-jIl" id="jVP-Dj-kYE"/>
+                        <outlet property="naviBar" destination="39w-nH-hnb" id="IgJ-iC-5bh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OK5-4O-sTN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -93,6 +122,9 @@
     </scenes>
     <resources>
         <image name="101" width="348" height="140"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
